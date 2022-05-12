@@ -1,9 +1,6 @@
 // cards.cpp
 // Author: Your name
 // Implementation of the classes defined in cards.h
-//NEW BRANCH
-
-
 
 #include "cards.h"
 #include <iostream>
@@ -20,17 +17,13 @@ Cards::~Cards(){
 }
 
 //Insert
-bool Cards::insert(string newSuite, string newVal){
+bool Cards::insert(char newSuite, char newVal){
     if(root == nullptr){
         Node* temp;
         cout << "checkpoint 1" << endl;
-        for(auto x : newSuite){
-            temp->suite += x;
-        }
+        temp->suite = newSuite;
         cout << "checkpoint 2"<< endl;
-        for(auto x : newVal){
-            temp->value += x;
-        }
+        temp->value = newVal;
 
         root = temp;
         return true;
@@ -43,7 +36,7 @@ bool Cards::insert(string newSuite, string newVal){
 }
 
 //Recursive Insert
-bool Cards::insert(string newSuite, string newVal, Node* n){
+bool Cards::insert(char newSuite, char newVal, Node* n){
     Node* temp;
     temp->suite = newSuite;
     temp->value = newVal;
@@ -74,7 +67,7 @@ bool Cards::insert(string newSuite, string newVal, Node* n){
 }
 
 //Find
-Cards::Node* Cards::getNodeFor(string suite, string value) const{
+Cards::Node* Cards::getNodeFor(char suite, char value) const{
     if(!root){
         return nullptr;
     }
@@ -123,7 +116,7 @@ bool Cards::find(int value){
 */
 
 //Remove
-bool Cards::remove(string suite, string value){
+bool Cards::remove(char suite, char value){
     if(!root){
         return false;
     }
@@ -146,8 +139,8 @@ bool Cards::remove(string suite, string value){
     }
     else if(n->left && n->right){
         Node* successor = getSuccessorNode(n->suite, n->value);
-        string tempSuite = successor->suite;
-        string tempVal = successor->value;
+        char tempSuite = successor->suite;
+        char tempVal = successor->value;
 
         remove(successor->suite, successor->value);
         n->suite = tempSuite;
@@ -192,7 +185,7 @@ bool Cards::remove(string suite, string value){
 
 
 //Predecessor Private
-Cards::Node* Cards::getPredecessorNode(string suite, string value) const{
+Cards::Node* Cards::getPredecessorNode(char suite, char value) const{
     Node* temp = getNodeFor(suite, value);
     if(!temp){
         return nullptr;
@@ -215,7 +208,7 @@ Cards::Node* Cards::getPredecessorNode(string suite, string value) const{
 }
 
 //Successor
-Cards::Node* Cards::getSuccessorNode(string suite, string value) const{
+Cards::Node* Cards::getSuccessorNode(char suite, char value) const{
     Node* temp = getNodeFor(suite, value);
     if(!temp){
         return nullptr;

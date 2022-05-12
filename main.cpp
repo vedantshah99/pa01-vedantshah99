@@ -26,25 +26,22 @@ int main(int argv, char** argc){
 
   //Read each file
   while (getline (cardFile1, line) && (line.length() > 0)){
-    string temp = "";
+    char temp;
     string line;
-    string word;
+    char word;
 
     getline(cardFile1, line);
     for(auto x : line){
       if(x == ' '){
-        cout << temp << endl;
-        for(auto x : temp){
-          word += x;
-        }
-        temp = "";
+        word = temp;
       }
       else{
-        temp = temp + x;
+        temp = x;
       }
     }
+    cout << word << endl;
     cout << temp << endl;
-    list.insert(temp, word);
+    list.insert(word, temp);
   }
   cardFile1.close();
 
