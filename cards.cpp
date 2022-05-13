@@ -210,31 +210,26 @@ bool Cards::hasSameMod(Cards other){
     Node* o = other.root;
     found = false;
     //cout << "checkpoint 1" << endl;
-    hasSame(o);
+    hasSameMod(o);
     disable = true;
     if(found == false){
         return false;
-    }
-    else{
-        other.remove(removedVal);
-        //cout << "checkpoint 10" << endl;
     }
 }
 
 void Cards::hasSameMod(Node* other) {
     if(other->left){
-        hasSame(other->left);
+        hasSameMod(other->left);
     }
     if(!found && contains(other->value)){
         //cout << "checkpoint 2" << endl;
         string temp = intToString(other->value);
         found = true;
         removedVal = other->value;
-        remove(other->value);
         return;
     }
     if(!found && other->right){
-        hasSame(other->right);
+        hasSameMod(other->right);
     }
     if(!found && !other->left && !other->right){
         return;
