@@ -1,2 +1,2 @@
-testcards: main.cpp tests.cpp cards.o
-	g++ main.cpp tests.cpp cards.o -o testcards
+game: main.cpp tests.o cards.o utility.o
+	g++ main.cpp tests.o cards.o utility.o -o game

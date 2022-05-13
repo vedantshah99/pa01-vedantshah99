@@ -3,6 +3,8 @@
 #include <string>
 #include <cstring>
 
+#include "cards.h"
+
 using namespace std;
 
-int stringToInt(string suite, string value);
+void testRun(Cards list1, Cards list2);
