@@ -48,7 +48,7 @@ int main(int argv, char** argc){
     list1.insert(numerical);
   }
   cardFile1.close();
-  list1.print();
+  //list1.print();
 
   //getting second list
   while (getline (cardFile2, line) && (line.length() > 0)){
@@ -70,8 +70,8 @@ int main(int argv, char** argc){
     list2.insert(numerical);
   }
   cardFile2.close();
-  list2.print();
-  cout << endl;
+  //list2.print();
+  //cout << endl;
 
 
   //game
