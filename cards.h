@@ -24,7 +24,8 @@ class Cards{
         bool contains(int value) const;
         string intToString(int num) const;
         void print() const;
-        bool hasSame(Cards other);
+        bool hasSameAlice(Cards other);
+        bool hasSameBob(Cards other);
         bool hasSameMod(Cards other);
 
     private:
@@ -41,7 +42,8 @@ class Cards{
         bool insert(int value, Node* n);
         void clear(Node* n);
         void print(Node* n) const;
-        void hasSame(Node* n);
+        void hasSameAlice(Node* n);
+        void hasSameBob(Node* n);
         void hasSameMod(Node* n);
         Node* getNodeFor(int value) const;
         Node* getPredecessorNode(int value) const;

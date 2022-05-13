@@ -169,11 +169,11 @@ bool Cards::contains(int value) const {
 bool found = false;
 int removedVal;
 
-bool Cards::hasSame(Cards other){
+bool Cards::hasSameAlice(Cards other){
     Node* o = other.root;
     found = false;
     //cout << "checkpoint 1" << endl;
-    hasSame(o);
+    hasSameAlice(o);
     disable = true;
     if(found == false){
         return false;
@@ -184,9 +184,24 @@ bool Cards::hasSame(Cards other){
     }
 }
 
-void Cards::hasSame(Node* other) {
+bool Cards::hasSameBob(Cards other){
+    Node* o = other.root;
+    found = false;
+    //cout << "checkpoint 1" << endl;
+    hasSameBob(o);
+    disable = true;
+    if(found == false){
+        return false;
+    }
+    else{
+        other.remove(removedVal);
+        //cout << "checkpoint 10" << endl;
+    }
+}
+
+void Cards::hasSameAlice(Node* other) {
     if(other->left){
-        hasSame(other->left);
+        hasSameAlice(other->left);
     }
     if(!found && contains(other->value)){
         //cout << "checkpoint 2" << endl;
@@ -198,7 +213,29 @@ void Cards::hasSame(Node* other) {
         return;
     }
     if(!found && other->right){
-        hasSame(other->right);
+        hasSameAlice(other->right);
+    }
+    if(!found && !other->left && !other->right){
+        return;
+    }
+    return;
+}
+
+void Cards::hasSameBob(Node* other) {
+    if(other->right){
+        hasSameBob(other->right);
+    }
+    if(!found && contains(other->value)){
+        //cout << "checkpoint 2" << endl;
+        string temp = intToString(other->value);
+        cout << temp << endl;
+        found = true;
+        removedVal = other->value;
+        remove(other->value);
+        return;
+    }
+    if(!found && other->left){
+        hasSameBob(other->left);
     }
     if(!found && !other->left && !other->right){
         return;

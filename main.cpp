@@ -78,12 +78,12 @@ bool alice = true;
 while(cont){
   if(alice){
     cout << "Alice picked a matching card ";
-    cont = list1.hasSame(list2);
+    cont = list1.hasSameAlice(list2);
     alice = false;
   }
   else{
     cout << "Bob picked a matching card ";
-    cont = list1.hasSame(list2);
+    cont = list1.hasSameBob(list2);
     alice = true;
   }
 }
