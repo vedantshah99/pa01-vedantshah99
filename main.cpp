@@ -72,8 +72,9 @@ int main(int argv, char** argc){
   //list2.print();
   //cout << endl;
 
-bool cont = true;
+bool cont = list1.hasSameMod(list2);
 bool alice = true;
+
 while(cont){
   if(alice){
     cout << "Alice picked a matching card ";
@@ -87,7 +88,7 @@ while(cont){
   }
 }
 
-  cout << endl<< endl;
+  cout << endl << endl;
   cout << "Alice's cards:" << endl;
   list1.print();
   cout << endl;

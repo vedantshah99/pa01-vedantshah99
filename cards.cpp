@@ -38,16 +38,16 @@ string Cards::intToString(int num) const{
     int valNum = num - 100*suiteNum;
     string card = "";
 
-    if(suiteNum == 4){
+    if(suiteNum == 1){
         card += "c";
     }
-    else if(suiteNum == 3){
+    else if(suiteNum == 2){
         card += "d";
     }
-    else if(suiteNum == 2){
+    else if(suiteNum == 3){
         card += "s";
     }
-    else if(suiteNum == 1){
+    else if(suiteNum == 4){
         card += "h";
     }
 
@@ -206,6 +206,41 @@ void Cards::hasSame(Node* other) {
     return;
 }
 
+bool Cards::hasSameMod(Cards other){
+    Node* o = other.root;
+    found = false;
+    //cout << "checkpoint 1" << endl;
+    hasSame(o);
+    disable = true;
+    if(found == false){
+        return false;
+    }
+    else{
+        other.remove(removedVal);
+        //cout << "checkpoint 10" << endl;
+    }
+}
+
+void Cards::hasSameMod(Node* other) {
+    if(other->left){
+        hasSame(other->left);
+    }
+    if(!found && contains(other->value)){
+        //cout << "checkpoint 2" << endl;
+        string temp = intToString(other->value);
+        found = true;
+        removedVal = other->value;
+        remove(other->value);
+        return;
+    }
+    if(!found && other->right){
+        hasSame(other->right);
+    }
+    if(!found && !other->left && !other->right){
+        return;
+    }
+    return;
+}
 
 
 

@@ -25,6 +25,7 @@ class Cards{
         string intToString(int num) const;
         void print() const;
         bool hasSame(Cards other);
+        bool hasSameMod(Cards other);
 
     private:
         struct Node {
@@ -41,6 +42,7 @@ class Cards{
         void clear(Node* n);
         void print(Node* n) const;
         void hasSame(Node* n);
+        void hasSameMod(Node* n);
         Node* getNodeFor(int value) const;
         Node* getPredecessorNode(int value) const;
         Node* getSuccessorNode(int value) const;
