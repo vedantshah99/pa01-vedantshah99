@@ -169,14 +169,19 @@ bool Cards::contains(int value) const {
 bool found = false;
 int removedVal;
 
-void Cards::hasSame(Cards other){
+bool Cards::hasSame(Cards other){
     Node* o = other.root;
     found = false;
     //cout << "checkpoint 1" << endl;
     hasSame(o);
-    other.remove(removedVal);
-    //cout << "checkpoint 10" << endl;
     disable = true;
+    if(found == false){
+        return false;
+    }
+    else{
+        other.remove(removedVal);
+        //cout << "checkpoint 10" << endl;
+    }
 }
 
 void Cards::hasSame(Node* other) {

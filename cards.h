@@ -24,7 +24,7 @@ class Cards{
         bool contains(int value) const;
         string intToString(int num) const;
         void print() const;
-        void hasSame(Cards other);
+        bool hasSame(Cards other);
 
     private:
         struct Node {

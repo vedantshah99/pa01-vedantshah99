@@ -72,21 +72,22 @@ int main(int argv, char** argc){
   //list2.print();
   //cout << endl;
 
+bool cont = true;
+bool alice = true;
+while(cont){
+  if(alice){
+    cout << "Alice picked a matching card ";
+    cont = list1.hasSame(list2);
+    alice = false;
+  }
+  else{
+    cout << "Bob picked a matching card ";
+    cont = list1.hasSame(list2);
+    alice = true;
+  }
+}
 
-  //game
-  cout << "Alice picked a matching card ";
-  list1.hasSame(list2);
-
-  cout << "Bob picked a matching card ";
-  list1.hasSame(list2);
-
-  cout << "Alice picked a matching card ";
-  list1.hasSame(list2);
-
-  cout << "Bob picked a matching card ";
-  list2.hasSame(list1);
-  cout << endl;
-
+  cout << endl<< endl;
   cout << "Alice's cards:" << endl;
   list1.print();
   cout << endl;
