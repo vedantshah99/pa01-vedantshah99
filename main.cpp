@@ -4,7 +4,6 @@
 #include <string.h>
 #include "cards.h"
 #include "utility.h"
-#include "tests.h"
 
 using namespace std;
 
