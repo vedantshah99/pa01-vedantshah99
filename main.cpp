@@ -79,16 +79,18 @@ while(cont){
   if(alice){
     cout << "Alice picked a matching card ";
     cont = list1.hasSameAlice(list2);
+    cont = list1.hasSameMod(list2);
     alice = false;
   }
   else{
     cout << "Bob picked a matching card ";
     cont = list1.hasSameBob(list2);
+    cont = list1.hasSameMod(list2);
     alice = true;
   }
 }
 
-  cout << endl << endl;
+  cout << endl;
   cout << "Alice's cards:" << endl;
   list1.print();
   cout << endl;
