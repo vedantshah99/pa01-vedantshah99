@@ -7,5 +7,5 @@ using namespace std;
 void testRun(Cards list1, Cards list2){
     list1.print();
     list2.print();
-    cout << "ballz" << endl;
+    cout << "nothing" << endl;
 }

@@ -1,4 +1,4 @@
-all=game
+all: game
 
 game: main.o cards.o utility.o
 	g++ main.cpp cards.o utility.o -o game
