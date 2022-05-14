@@ -27,9 +27,7 @@ int main(int argv, char** argc){
   }
 
   //Read each file
-  cout << "processing cardFile1" << endl;
   while (getline (cardFile1, line) && (line.length() > 0)){
-    cout << line << endl;
     string temp = "";
     string word;
     
@@ -52,9 +50,7 @@ int main(int argv, char** argc){
   //list1.print();
 
   //getting second list
-  cout << "processing cardFile2" << endl;
   while (getline (cardFile2, line) && (line.length() > 0)){
-    cout << line << endl;
     string temp = "";
     string word;
 
@@ -76,8 +72,10 @@ int main(int argv, char** argc){
   //list2.print();
   //cout << endl;
 
+cout << "we will see if there is the card that's the same" << endl;
 bool cont = list1.hasSameMod(list2);
 bool alice = true;
+cout << cont << endl;
 
 while(cont){
   if(alice){
