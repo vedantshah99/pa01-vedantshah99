@@ -24,9 +24,9 @@ class Cards{
         bool contains(int value) const;
         string intToString(int num) const;
         void print() const;
-        bool hasSameAlice(Cards other);
-        bool hasSameBob(Cards other);
-        bool hasSameMod(Cards other);
+        bool hasSameAlice(Cards& other);
+        bool hasSameBob(Cards& other);
+        bool hasSameMod(Cards& other);
 
     private:
         struct Node {
@@ -45,6 +45,7 @@ class Cards{
         void hasSameAlice(Node* n);
         void hasSameBob(Node* n);
         void hasSameMod(Node* n);
+        bool hasSameCard(Node* n, Cards& other);
         Node* getNodeFor(int value) const;
         Node* getPredecessorNode(int value) const;
         Node* getSuccessorNode(int value) const;

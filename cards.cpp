@@ -169,7 +169,7 @@ bool Cards::contains(int value) const {
 bool found = false;
 int removedVal;
 
-bool Cards::hasSameAlice(Cards other){
+bool Cards::hasSameAlice(Cards& other){
     Node* o = other.root;
     found = false;
     //cout << "checkpoint 1" << endl;
@@ -184,7 +184,7 @@ bool Cards::hasSameAlice(Cards other){
     }
 }
 
-bool Cards::hasSameBob(Cards other){
+bool Cards::hasSameBob(Cards& other){
     Node* o = other.root;
     found = false;
     //cout << "checkpoint 1" << endl;
@@ -243,15 +243,20 @@ void Cards::hasSameBob(Node* other) {
     return;
 }
 
-bool Cards::hasSameMod(Cards other){
-    Node* o = other.root;
-    found = false;
-    //cout << "checkpoint 1" << endl;
-    hasSameMod(o);
+bool Cards::hasSameMod(Cards& other){
     disable = true;
-    if(found == false){
+    return hasSameCard(this->root, other);
+}
+
+bool Cards::hasSameCard(Node* n, Cards& other){
+    disable = true;
+    if (n == nullptr){
         return false;
     }
+    if(other.contains(n->value)){
+        return true;
+    }
+    return this->hasSameCard(n->left, other) || this->hasSameCard(n->right, other);
 }
 
 void Cards::hasSameMod(Node* other) {
