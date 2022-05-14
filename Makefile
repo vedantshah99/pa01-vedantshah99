@@ -13,4 +13,4 @@ utility.o: utility.cpp
 	g++ -c utility.cpp
 
 clean:
-	rm *.o
+	rm *.o game
