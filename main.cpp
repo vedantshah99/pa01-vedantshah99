@@ -27,7 +27,9 @@ int main(int argv, char** argc){
   }
 
   //Read each file
+  cout << "processing cardFile1" << endl;
   while (getline (cardFile1, line) && (line.length() > 0)){
+    cout << line << endl;
     string temp = "";
     string word;
     
@@ -50,7 +52,9 @@ int main(int argv, char** argc){
   //list1.print();
 
   //getting second list
+  cout << "processing cardFile2" << endl;
   while (getline (cardFile2, line) && (line.length() > 0)){
+    cout << line << endl;
     string temp = "";
     string word;
 
