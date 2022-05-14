@@ -72,10 +72,10 @@ int main(int argv, char** argc){
   //list2.print();
   //cout << endl;
 
-cout << "we will see if there is the card that's the same" << endl;
+// cout << "we will see if there is the card that's the same" << endl;
 bool cont = list1.hasSameMod(list2);
 bool alice = true;
-cout << cont << endl;
+// cout << cont << endl;
 
 while(cont){
   if(alice){
